@@ -1,20 +1,20 @@
 <template>
 
-  <!-- <teleport to=".modals" v-if="modal === 'login'">
-    <Login />
+  <teleport to=".modals" v-if="modal === 'login'">
+    <Login @close="closePage"/>
   </teleport>
   
-  <teleport to=".modals" v-if="modal === 'register'">
+  <!-- <teleport to=".modals" v-if="modal === 'register'">
     <Register />
   </teleport> -->
 
-  <!-- <span @click="changePage('login')">
+  <span @click="changePage('login')">
     <h1>Login</h1>
   </span>
   <span @click="changePage('register')">
     <h1>Register</h1>
-  </span> -->
-  <Login />
+  </span>
+
 </template>
 
 <script>
@@ -34,7 +34,10 @@ export default {
   },
   methods: {
     changePage(page) {
-      console.log(page);
+      this.modal = page;
+    },
+    closePage() {
+      this.modal = "";
     }
   }
 }

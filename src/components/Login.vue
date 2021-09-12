@@ -1,5 +1,5 @@
 <template>
-  <div class="backdrop">
+  <div class="backdrop" @click.self="closePage">
     <form @submit.prevent="handleSubmit">
       <label>Email:</label>
       <input type="email" required v-model="email">
@@ -50,6 +50,9 @@ export default {
         this.passwordError = "";
         this.terms = false;
       }
+    },
+    closePage() {
+      this.$emit('close');
     }
   }
 }
