@@ -1,11 +1,13 @@
 <template>
   <div class="backdrop">
-    <form>
+    <form @submit.prevent="handleSubmit">
       <label>Email:</label>
       <input type="email" required v-model="email">
+      <div v-if="emailError" class="error">{{ emailError}}</div>
 
       <label>Password:</label>
       <input type="password" required v-model="password">
+      <div v-if="passwordError" class="error">{{ passwordError}}</div>
 
       <div class="terms">
         <input type="checkbox" required v-model="terms">
@@ -20,12 +22,34 @@
 </template>
 
 <script>
+import db from '../static/db';
+
 export default {
   data() {
     return {
       email: "",
       password: "",
-      terms: false
+      terms: false,
+      emailError: "",
+      passwordError: "",
+      db: db
+    }
+  },
+  methods: {
+    handleSubmit() {
+      if (this.email !== this.db.email) {
+        this.emailError = "User with this email does not exist";
+      }
+      if (this.password !== this.db.password) {
+        this.passwordError = "Email or password is incorrect"
+      }
+      if (this.email === this.db.email && this.password === this.db.password) {
+        this.email = "";
+        this.password = "";
+        this.emailError = "";
+        this.passwordError = "";
+        this.terms = false;
+      }
     }
   }
 }
@@ -81,9 +105,16 @@ export default {
     border-radius: 20px;
     font-weight: bold;
     text-transform: uppercase;
+    cursor: pointer;
   }
   .submit {
     text-align: center;
+  }
+  .error {
+    color: #ff0062;
+    margin-top: 10px;
+    font-size: 0.8em;
+    font-weight: bold;
   }
 
 </style>
