@@ -58,7 +58,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+  template {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    color: #2c3e50;
+  }
   .backdrop {
     top:0;
     position: fixed;
@@ -75,6 +79,7 @@ export default {
     border-radius: 10px;
   }
   label {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
     color: #aaa;
     display: inline-block;
     margin: 25px 0 15px;
@@ -100,7 +105,7 @@ export default {
     top:2px;
   }
   button {
-    background: #0b6dff;
+    background: #3f3f3f;
     border: 0;
     padding: 10px 20px;
     margin-top: 20px;
@@ -114,7 +119,8 @@ export default {
     text-align: center;
   }
   .error {
-    color: #ff0062;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    color: #3f3f3f;
     margin-top: 10px;
     font-size: 0.8em;
     font-weight: bold;
