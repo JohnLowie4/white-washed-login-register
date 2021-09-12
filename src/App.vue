@@ -1,26 +1,62 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+  <!-- <teleport to=".modals" v-if="modal === 'login'">
+    <Login />
+  </teleport>
+  
+  <teleport to=".modals" v-if="modal === 'register'">
+    <Register />
+  </teleport> -->
+
+  <!-- <span @click="changePage('login')">
+    <h1>Login</h1>
+  </span>
+  <span @click="changePage('register')">
+    <h1>Register</h1>
+  </span> -->
+  <Login />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Login from './components/Login.vue';
+import Register from './components/Register.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Login,
+    Register
+  },
+  data() {
+    return {
+      modal: "",
+    }
+  },
+  methods: {
+    changePage(page) {
+      console.log(page);
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
+  body {
+    margin: 0;
+    background: #eee;
+  }
+  h1 {
+    color: rgb(90, 90, 90);
+  }
+  span {
+    cursor: pointer;
+  }
 </style>
