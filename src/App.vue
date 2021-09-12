@@ -4,9 +4,9 @@
     <Login @close="closePage"/>
   </teleport>
   
-  <!-- <teleport to=".modals" v-if="modal === 'register'">
-    <Register />
-  </teleport> -->
+  <teleport to=".modals" v-if="modal === 'register'">
+    <Register @close="closePage"/>
+  </teleport>
 
   <span @click="changePage('login')">
     <h1>Login</h1>
