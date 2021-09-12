@@ -61,12 +61,12 @@ export default {
 <style>
   template {
     font-family: Avenir, Helvetica, Arial, sans-serif;
-    color: #2c3e50;
+    color: #2a3b45;
   }
   .backdrop {
     top:0;
     position: fixed;
-    background: rgba(0,0,0,0.5);
+    background: #3b3c3e;
     width: 100%;
     height: 100%;
   }
@@ -80,7 +80,7 @@ export default {
   }
   label {
     font-family: Avenir, Helvetica, Arial, sans-serif;
-    color: #aaa;
+    color: #acacac;
     display: inline-block;
     margin: 25px 0 15px;
     font-size: 0.6em;
@@ -94,8 +94,8 @@ export default {
     width: 100%;
     box-sizing: border-box;
     border: none;
-    border-bottom: 1px solid #ddd;
-    color: #555;
+    border-bottom: 1px solid #727377;
+    color: #3b3c3e;
   }
   input[type="checkbox"] {
     display: inline-block;
@@ -105,7 +105,7 @@ export default {
     top:2px;
   }
   button {
-    background: #3f3f3f;
+    background: #3b3c3e;
     border: 0;
     padding: 10px 20px;
     margin-top: 20px;
@@ -120,7 +120,7 @@ export default {
   }
   .error {
     font-family: Avenir, Helvetica, Arial, sans-serif;
-    color: #3f3f3f;
+    color: #3b3c3e;
     margin-top: 10px;
     font-size: 0.8em;
     font-weight: bold;

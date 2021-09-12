@@ -8,12 +8,14 @@
     <Register @close="closePage"/>
   </teleport>
 
-  <span @click="changePage('login')">
-    <h1>Login</h1>
-  </span>
-  <span @click="changePage('register')">
-    <h1>Register</h1>
-  </span>
+  <div class="home">
+    <span class="login" @click="changePage('login')">
+      <h1>Login</h1>
+    </span>
+    <span class="register" @click="changePage('register')">
+      <h1>Register</h1>
+    </span>
+  </div>
 
 </template>
 
@@ -54,12 +56,17 @@ export default {
   }
   body {
     margin: 0;
-    background: #eee;
+    background: #eeeeee;
   }
   h1 {
-    color: rgb(90, 90, 90);
+    color: #2a3b45;
   }
   span {
     cursor: pointer;
   }
+  .home {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
 </style>
